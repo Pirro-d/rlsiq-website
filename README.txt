@@ -1,23 +1,27 @@
-RLS IQ — RESPONSIVE ONE-PAGE WEBSITE
+RLS IQ WEBSITE — VERSION 1
 
-FILES
-- index.html: website content and sections
-- styles.css: desktop/mobile design
-- script.js: mobile menu, section highlighting, form behavior
-- assets/: original local website photographs
+Open index.html in Safari or Chrome. Keep index.html, styles.css, and script.js in the same folder.
 
-HOW TO USE WITH YOUR GITHUB + CLOUDFLARE PAGES
-1. Unzip the archive.
-2. Open your GitHub repository Pirro-d/rlsiq-website.
-3. Upload index.html, styles.css, script.js and the assets folder to the repository root (or use GitHub's Add file > Upload files).
-4. Commit the changes to main.
-5. Cloudflare Pages should automatically deploy the new version from main.
-6. Keep Framework preset = None, Build command empty, and output directory = / for this plain HTML website.
+Included: responsive layout, sticky navigation, animated cards/icons, dual-direction marquee, counter animations, portfolio reveal panels, FAQ accordion, hero controls, and demo request form.
 
-IMPORTANT BEFORE LAUNCH
-- This is a design prototype. Replace all copy with approved company claims.
-- The form does NOT transmit submissions. It currently prepares and copies a request; connect a secure form service, Cloudflare Pages Function, or backend before public launch.
-- Replace placeholder footer contact copy with verified business details.
-- Use your official logo if available; the current mark is CSS-rendered for demonstration.
-- All images are local assets in this archive; no image hosting service is required.
-- The web fonts load from Google Fonts, falling back to system fonts if offline.
+IMPORTANT BEFORE LAUNCH:
+- Request form is a demonstration only. It does not send or save submissions. Connect a secure backend or form service and add spam protection and a privacy notice.
+- Photography is externally loaded from Unsplash and is general construction/architecture placeholder imagery. Replace with properly licensed, fire-door-specific RLS IQ photography before publishing.
+- Replace illustrative statistics with verified company metrics; the current metrics are labeled illustrative.
+- Replace placeholder contact information and add real privacy policy and terms.
+- Review service descriptions and compliance claims with RLS IQ.
+- Font loading requires internet access (Google Fonts). Fallback fonts work offline.
+
+This is an original implementation inspired by the user's layout references, not a copy of Rampart's proprietary code or assets.
+
+V3: Solid red CTAs with dark-red hover; full 360-degree sideways icon rotations; scroll-triggered counters starting at zero.
+
+V4 refinements:
+- All solid-red CTA buttons now hover to a moderately darker red (#b92832).
+- Four process cards lift 10px and gain a soft shadow on hover.
+- Three service cards lift 10px and their images gently zoom 5% inside the frame.
+- Statistics icons are static; existing number count-up behavior is preserved.
+
+V5: Replaced placeholder wordmark in header and footer with supplied official transparent PNG. Footer uses white backing for contrast with charcoal.
+
+V6: Header uses supplied dark-lettering logo (V1); footer uses supplied white-lettering logo (V2), both transparent.
