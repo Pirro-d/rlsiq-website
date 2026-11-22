@@ -34,3 +34,17 @@ if('IntersectionObserver' in window){
 const heroImages=['https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1500&q=85','https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1500&q=85','https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&q=85'];let heroIndex=0;function changeHero(dir){heroIndex=(heroIndex+dir+heroImages.length)%heroImages.length;document.querySelector('.hero-photo').style.backgroundImage=`url('${heroImages[heroIndex]}')`;}document.getElementById('prevHero').addEventListener('click',()=>changeHero(-1));document.getElementById('nextHero').addEventListener('click',()=>changeHero(1));
 const quotes=[['“Better visibility into fire door conditions helps facilities make informed safety decisions.”','RLS IQ — Our approach'],['“Clear records make it easier to identify what needs attention and plan next steps.”','RLS IQ — Our commitment'],['“Inspection, documentation, and asset intelligence work better together.”','RLS IQ — Our philosophy']];let quoteIndex=0;function quote(dir){quoteIndex=(quoteIndex+dir+quotes.length)%quotes.length;document.getElementById('testimonialText').innerHTML=`${quotes[quoteIndex][0]}<small>${quotes[quoteIndex][1]}</small>`}document.getElementById('quotePrev').addEventListener('click',()=>quote(-1));document.getElementById('quoteNext').addEventListener('click',()=>quote(1));
 document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('formNote').textContent='Demo only: your information has not been sent. We will connect this form before launch.'});
+
+// V11: animate cards when they enter the viewport on touch devices.
+(function(){
+ const touch=matchMedia('(hover: none) and (pointer: coarse)').matches;
+ if(!touch || matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const cards=document.querySelectorAll('.step-card,.service-card,.portfolio-card');
+ if(!('IntersectionObserver' in window))return;
+ const cardObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(!entry.isIntersecting)return;
+   entry.target.classList.add('mobile-inview');cardObserver.unobserve(entry.target);
+  });
+ },{threshold:0.18,rootMargin:'0px 0px -5% 0px'});
+ cards.forEach(card=>cardObserver.observe(card));
+})();
