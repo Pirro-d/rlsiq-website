@@ -37,7 +37,7 @@ document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDe
 
 // V11: animate cards when they enter the viewport on touch devices.
 (function(){
- const touch=matchMedia('(hover: none) and (pointer: coarse)').matches;
+ const touch=matchMedia('(max-width: 950px)').matches;
  if(!touch || matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  const cards=document.querySelectorAll('.step-card,.service-card,.portfolio-card');
  if(!('IntersectionObserver' in window))return;
@@ -45,6 +45,6 @@ document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDe
   entries.forEach(entry=>{if(!entry.isIntersecting)return;
    entry.target.classList.add('mobile-inview');cardObserver.unobserve(entry.target);
   });
- },{threshold:0.18,rootMargin:'0px 0px -5% 0px'});
+ },{threshold:0.08,rootMargin:'0px 0px -3% 0px'});
  cards.forEach(card=>cardObserver.observe(card));
 })();
